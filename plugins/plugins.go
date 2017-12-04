@@ -35,7 +35,7 @@ type Plugin interface {
 	Close()
 }
 
-type Constructor func(conf Config) (Plugin, PluginType, error)
+type Constructor func(conf Config) (Plugin, PluginType, bool, error)
 
 type Config interface {
 	PluginName() string
