@@ -2,6 +2,7 @@ package plugins
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/hexdecteam/easegateway-types/pipelines"
 	"github.com/hexdecteam/easegateway-types/task"
@@ -46,7 +47,7 @@ type ConfigConstructor func() Config
 
 ////
 
-type HTTPHandler func(w http.ResponseWriter, r *http.Request, urlParams map[string]string)
+type HTTPHandler func(w http.ResponseWriter, r *http.Request, urlParams map[string]string, routeDuration time.Duration)
 
 type HTTPURLPattern struct {
 	Scheme   string
